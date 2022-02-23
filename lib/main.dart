@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title:const Text("My Project"),
         leading: const Icon(Icons.arrow_back_rounded),
         actions: const [
-          Icon(Icons.search),
+          Icon(Icons.account_balance_outlined),
           Icon(Icons.admin_panel_settings_rounded),
         ],
         backgroundColor: Colors.green,
