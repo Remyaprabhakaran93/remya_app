@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-
+late Size size;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +44,36 @@ class _MyHomePageState extends State<MyHomePage> {
         leading: const Icon(Icons.arrow_back_rounded),
         actions: const [
           Icon(Icons.search),
-          Icon(Icons.admin_panel_settings_rounded),
+          Icon(Icons.notifications),
+          Icon(Icons.shopping_cart),
         ],
-        backgroundColor: Colors.green,
-        elevation: 0,
+        backgroundColor: Colors.pinkAccent,
+        elevation: 10,
       ),
+
+      body: SizedBox(
+        width:size.width,
+        child: Column(
+          mainAxisAlignment:MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.network("https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/16:9/w_2992,h_1683,c_limit/gettyimages-1146431497.jpg"),
+            Row(
+              children: [
+                Column(
+                  children:const [
+                  Text('Oeschinen Lake Campground'),
+                  Text('Kandersteg, Switzerland'),
+                  ],
+                ),
+                Icon(Icons.star),
+                Text("41"),
+              ],
+            )
+
+          ],
+        ),
+        ),
 
     );
   }
