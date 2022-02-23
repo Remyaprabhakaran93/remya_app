@@ -55,50 +55,67 @@ late Size size;
       body: SizedBox(
         width:size.width,
         child: Column(
-          mainAxisAlignment:MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment:MainAxisAlignment.start,
           children: [
-            Image.network("https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/16:9/w_2992,h_1683,c_limit/gettyimages-1146431497.jpg"),
-            Row(
-              children: [
-                Column(
-                  children:const [
-                  Text('Oeschinen Lake Campground'),
-                  Text('Kandersteg, Switzerland'),
-                  ],
-                ),
-                const Icon(Icons.star),
-                const Text("41"),
-              ],
+            Image.network("https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/16:9/w_2992,h_1683,c_limit/gettyimages-1146431497.jpg",
+              height: 200,width: size.width,
+            fit: BoxFit.cover,),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children:const [
+                    Text('Oeschinen Lake Campgroun', style:TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
+                    SizedBox(height: 10,),
+                    Text('Kandersteg, Switzerland'),
+                    ],
+                  ),
+                  const Spacer(),
+                  const Icon(Icons.star,color: Colors.red),
+                  const Text("41"),
+                ],
+              ),
             ),
-            Row(
-              children: [
-                Column(
-                  children: const [
-                    Icon(Icons.call),
-                    Text("CALL"),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Icon(Icons.route),
-                    Text("ROUTE"),
-                  ],
-                ),
-                Column(
-                  children: const [
-                    Icon(Icons.share),
-                    Text("SHARE"),
-                  ],
-                ),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Column(
+                    children: const [
+                      Icon(Icons.call),
+                      SizedBox(height: 10,),
+                      Text("CALL"),
+                    ],
+                  ),
+                  Column(
+                    children:  const [
+                      Icon(Icons.account_balance_outlined),
+                      SizedBox(height: 10,),
+                      Text("ROUTE"),
+                    ],
+                  ),
+                  Column(
+                    children: const [
+                      Icon(Icons.share),
+                      SizedBox(height: 10,),
+                      Text("SHARE"),
+                    ],
+                  ),
 
-              ],
+                ],
+              ),
             ),
-            const Text("Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese"
-                " Alps Situated 1,578 meters above sea level, it is one of the larger"
-                " Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures "
-                "and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. "
-                "Activities enjoyed here include rowing, and riding the summer toboggan run."),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: const Text("Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese"
+                  " Alps Situated 1,578 meters above sea level, it is one of the larger"
+                  " Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures "
+                  "and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. "
+                  "Activities enjoyed here include rowing, and riding the summer toboggan run."),
+            ),
           ],
         ),
         ),
