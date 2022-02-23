@@ -37,14 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
 late Size size;
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
+    size=MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
 
         title:const Text("My Project"),
         leading: const Icon(Icons.arrow_back_rounded),
         actions: const [
-          Icon(Icons.account_balance_outlined),
+          Icon(Icons.search),
           Icon(Icons.notifications),
           Icon(Icons.shopping_cart),
         ],
@@ -67,11 +67,38 @@ late Size size;
                   Text('Kandersteg, Switzerland'),
                   ],
                 ),
-                Icon(Icons.star),
-                Text("41"),
+                const Icon(Icons.star),
+                const Text("41"),
               ],
-            )
+            ),
+            Row(
+              children: [
+                Column(
+                  children: const [
+                    Icon(Icons.call),
+                    Text("CALL"),
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Icon(Icons.route),
+                    Text("ROUTE"),
+                  ],
+                ),
+                Column(
+                  children: const [
+                    Icon(Icons.share),
+                    Text("SHARE"),
+                  ],
+                ),
 
+              ],
+            ),
+            const Text("Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese"
+                " Alps Situated 1,578 meters above sea level, it is one of the larger"
+                " Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures "
+                "and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. "
+                "Activities enjoyed here include rowing, and riding the summer toboggan run."),
           ],
         ),
         ),
