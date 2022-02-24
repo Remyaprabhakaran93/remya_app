@@ -1,4 +1,6 @@
+
 import 'package:flutter/material.dart';
+import 'package:remya_app/new_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -40,85 +42,102 @@ late Size size;
     size=MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-
-        title:const Text("My Project"),
-        leading: const Icon(Icons.arrow_back_rounded),
-        actions: const [
+        title: Text("My App"),
+        leading:
+        Icon(Icons.arrow_back_outlined),
+        actions: [
           Icon(Icons.search),
-          Icon(Icons.notifications),
-          Icon(Icons.shopping_cart),
+          Icon(Icons.add_shopping_cart),
         ],
         backgroundColor: Colors.pinkAccent,
         elevation: 10,
       ),
 
-      body: SizedBox(
-        width:size.width,
-        child: Column(
-          mainAxisAlignment:MainAxisAlignment.start,
-          children: [
-            Image.network("https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/16:9/w_2992,h_1683,c_limit/gettyimages-1146431497.jpg",
-              height: 200,width: size.width,
-            fit: BoxFit.cover,),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children:const [
-                    Text('Oeschinen Lake Campgroun', style:TextStyle(fontWeight: FontWeight.bold,color: Colors.red)),
-                    SizedBox(height: 10,),
-                    Text('Kandersteg, Switzerland'),
-                    ],
-                  ),
-                  const Spacer(),
-                  const Icon(Icons.star,color: Colors.red),
+      body:SafeArea(
+        child: SizedBox(
+          width: size.width,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children:[
+              Image.network("https://media.cntraveller.com/photos/611bf0b8f6bd8f17556db5e4/16:9/w_2992,h_1683,c_limit/gettyimages-1146431497.jpg", height: 300,width: 500,fit: BoxFit.fitWidth),
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:const [
+                    Text("Ireland",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.red,fontSize: 20)),
+                    Text("Dublin"),
+                        ],
+                    ),
+                    Spacer(),
+                  const Icon(Icons.star,color: Colors.red,),
                   const Text("41"),
-                ],
+                  ],
+                ),
               ),
+              Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      GestureDetector(
+                          onTap: (){
+                            print("hi");
+                          },
+                        behavior: HitTestBehavior.opaque,
+                        child: Column(
+                          children:const [
+                            Icon(Icons.call,color: Colors.blue),
+                            SizedBox(height: 15),
+                            Text("CALL"),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        children:const [
+                          Icon(Icons.seven_k,color: Colors.blue),
+                          SizedBox(height: 15),
+                          Text("ROUTE"),
+                        ],
+                      ),
+                      Column(
+                        children:const [
+                          Icon(Icons.share,color: Colors.blue),
+                          SizedBox(height: 15),
+                          Text("SHARE"),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              const Padding(
+              padding: EdgeInsets.all(20),
+                  child: Text("sdfghzgyaxghsxbkjbckjhkjshbdhcbkdhbc"
+                      "dxfcxhghxjchvxhvzbnnnnnnxvxhbmcnbxncv xbn "
+                      "szxdcfgvhbghfcxdcfgvhj vhbjnkb vvbnxc vvvvvvvvvvdcx"
+                      "xdcfvgvgxcfgvhbjcfgvbhcfgvhbjfgvh"),
+                ),
+              GestureDetector(
+                onTap: (){
+                  print("hello world");
+                  Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => const NewPage()),
+                  );
+                },
+                child: Container(
+                    width: 200,
+                    decoration: BoxDecoration(color: Colors.pink,borderRadius: BorderRadius.all(Radius.circular(40))),height: 50,
+                    child: Center(child: Text("submit",style: TextStyle(color: Colors.white),))
+                ),
+              )
+            ],
             ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Column(
-                    children: const [
-                      Icon(Icons.call),
-                      SizedBox(height: 10,),
-                      Text("CALL"),
-                    ],
-                  ),
-                  Column(
-                    children:  const [
-                      Icon(Icons.account_balance_outlined),
-                      SizedBox(height: 10,),
-                      Text("ROUTE"),
-                    ],
-                  ),
-                  Column(
-                    children: const [
-                      Icon(Icons.share),
-                      SizedBox(height: 10,),
-                      Text("SHARE"),
-                    ],
-                  ),
+          ),
+      ),
 
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: const Text("Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese"
-                  " Alps Situated 1,578 meters above sea level, it is one of the larger"
-                  " Alpine Lakes. A gondola ride from Kandersteg, followed by a half-hour walk through pastures "
-                  "and pine forest, leads you to the lake, which warms to 20 degrees Celsius in the summer. "
-                  "Activities enjoyed here include rowing, and riding the summer toboggan run."),
-            ),
-          ],
-        ),
-        ),
+
 
     );
   }
