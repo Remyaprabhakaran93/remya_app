@@ -37,44 +37,8 @@ class _SecondHomePageState extends State<SecondHomePage> {
                     "prepared from a starch-based batter that may contain eggs, milk and butter and "
                     "cooked on a hot surface such as a griddle or frying pan, often frying with oil or butter."
                     " It is a type of batter bread. "),
-                Padding(
-                  padding:  const EdgeInsets.all(25),
-                  child: Row(
-                    children:  const [
-                      Icon(Icons.star_rate),
-                      Text("170 Reviews"),
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Row(
-                    children: [
-                      Column(
-                        children: const [
-                          Icon(Icons.book),
-                          Text("Prep:"),
-                          Text("25 mins"),
-                        ],
-                      ),
-                      Column(
-                        children: const [
-                          Icon(Icons.timelapse_outlined),
-                          Text("Cook:"),
-                          Text("1 hr"),
-                        ],
-                      ),
-                      Column(
-                        children: const [
-                          Icon(Icons.person),
-                          Text("Feeds:"),
-                          Text("4-6"),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-
+               firstRow(),
+               secondRow(),
               ],
             ),
           ),
@@ -84,7 +48,49 @@ class _SecondHomePageState extends State<SecondHomePage> {
           ),
         ],
       ),
+    );
+  }
 
+  Widget firstRow(){
+    return  Padding(
+      padding:  const EdgeInsets.all(25),
+      child: Row(
+        children:  const [
+          Icon(Icons.star_rate),
+          Text("170 Reviews"),
+        ],
+      ),
+    );
+  }
+
+  Widget secondRow(){
+    return Padding(
+      padding: const EdgeInsets.all(20),
+      child: Row(
+        children: [
+          Column(
+            children: const [
+              Icon(Icons.book),
+              Text("Prep:"),
+              Text("25 mins"),
+            ],
+          ),
+          Column(
+            children: const [
+              Icon(Icons.timelapse_outlined),
+              Text("Cook:"),
+              Text("1 hr"),
+            ],
+          ),
+          Column(
+            children: const [
+              Icon(Icons.person),
+              Text("Feeds:"),
+              Text("4-6"),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
